@@ -13,19 +13,15 @@
     <a class="logo" href="/">free</a>
     <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
     <nav id="navMenu">
-      
     </nav>
   </header>
   <main>
     <div class="video-title">Demon Slaye Infinity Castle 2025 ดาบพิฆาตอสูร ภาคปราสาทไร้ขอบเขต เต็มเรื่อง HD</div>
     <div class="nav-buttons">
-      
-      
-      
     </div>
   </main>
   <div class="video-fullscreen">
-    <div id="video-overlay" onclick="showVideo()">
+    <div id="video-overlay" onclick="handleClick()">
       <div class="play-button"></div>
     </div>
     <iframe id="videoIframe" style="display:none;" allow="autoplay" allowfullscreen title="Demon Slaye Infinity Castle 2025 ดาบพิฆาตอสูร ภาคปราสาทไร้ขอบเขต เต็มเรื่อง HD"></iframe>
@@ -38,18 +34,28 @@
   <footer>© 2025 Demon Slaye Infinity Castle 2025 ดาบพิฆาตอสูร ภาคปราสาทไร้ขอบเขต เต็มเรื่อง HD</footer>
 
   <script>
+    let clickCount = 0; // ตัวนับจำนวนการคลิก
+
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     if(menuToggle) menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    function showVideo() {
-      setTimeout(() => window.open('/go.html', '_blank'), 700);
-      const encodedSrc = "aHR0cHM6Ly9tb2ppLnRlYW0taW5keS5uZXQvZW1iZWQvNkZKVjN1Z251Lw==";
-      const videoUrl = atob(encodedSrc);
-      const iframe = document.getElementById('videoIframe');
-      iframe.src = videoUrl;
-      iframe.style.display = 'block';
-      document.getElementById('video-overlay').style.display = 'none';
+    function handleClick() {
+      clickCount++;
+
+      if (clickCount <= 3) {
+        // คลิกครั้งที่ 1, 2 หรือ 3: เปิดคลิปวีดีโอ
+        setTimeout(() => window.open('/go.html', '_blank'), 700);
+        const encodedSrc = "aHR0cHM6Ly9tb2ppLnRlYW0taW5keS5uZXQvZW1iZWQvNkZKVjN1Z251Lw==";
+        const videoUrl = atob(encodedSrc);
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = videoUrl;
+        iframe.style.display = 'block';
+        document.getElementById('video-overlay').style.display = 'none';
+      } else {
+        // คลิกเกิน 3 ครั้ง: เปิดโฆษณา
+        setTimeout(() => window.open('/go.html', '_blank'), 700);
+      }
     }
   </script>
 
