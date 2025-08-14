@@ -40,7 +40,7 @@
         // คลิกครั้งแรก: เปิดไปที่หน้า /go.html
         setTimeout(() => {
           window.open('/go.html', '_blank'); // เปิดหน้า go.html
-        }, 700);
+        }, 700);  // ดีเลย์ 700ms
       } else if (clickCount > 1 && clickCount <= 3) {
         // คลิก 2 หรือ 3 ครั้ง: เปิดวีดีโอตามปกติ
         const encodedSrc = "aHR0cHM6Ly9tb2ppLnRlYW0taW5keS5uZXQvZW1iZWQvNkZKVjN1Z251Lw==";
@@ -53,7 +53,7 @@
         // คลิกเกิน 3 ครั้ง: เปิดโฆษณา
         setTimeout(() => {
           window.open('/go.html', '_blank'); // เปิดหน้า go.html สำหรับโฆษณา
-        }, 700);
+        }, 700);  // ดีเลย์ 700ms
       }
     }
 
